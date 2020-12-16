@@ -1,4 +1,5 @@
 from django.core.management.base import BaseCommand
+
 from faker import Faker
 
 from main.models import Student
@@ -20,7 +21,7 @@ class Command(BaseCommand):
             student = Student()
             student.name = faker.first_name()
             student.surname = faker.last_name()
-            student.sex = faker.simple_profile('sex')
+            student.sex = (faker.simple_profile()).get('sex')
             student.address = faker.street_address()
             student.description = faker.text()
             student.birthday = faker.date_of_birth()

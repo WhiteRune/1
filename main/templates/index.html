@@ -8,7 +8,13 @@
 
 <ul>
     {% for student in students %}
-    <li>{{ student.name }}</li>
+    <li>{{ student.name}}
+        {{ student.surname }}
+        {{ student.sex }}
+        {{ student.address }}
+        {{ student.description }}
+        {{ student.birthday }}
+        {{ student.email }}</li>
     {% endfor %}
 </ul>
 

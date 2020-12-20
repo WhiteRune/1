@@ -1,4 +1,5 @@
-from main.views import show_all_students, create_student, create_student_by_form
+from main.views import show_all_students, create_student, \
+    create_student_by_form
 from django.urls import path
 
 urlpatterns = [

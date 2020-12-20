@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from main.models import Student
 from main.forms import StudentForm
 
+
 def show_all_students(request):
     """
     Shows all students in template
@@ -51,4 +52,3 @@ def create_student_by_form(request):
             student_form.save()
 
         return redirect('/home/form/')
-

@@ -16,4 +16,3 @@ class Student(models.Model):
     description = models.TextField()
     email = models.CharField(max_length=200)
 
-

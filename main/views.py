@@ -1,5 +1,7 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+
+from main.forms import StudentForm
 from main.models import Student
 
 
@@ -30,3 +32,23 @@ def create_student(request):
     student.name = student_name_from_request
     student.save()
     return HttpResponse('Student {} have been created'.format(student.name))
+
+
+def create_student_by_form(request):
+    """
+    Create student by Django Forms
+    """
+    if request.method == 'GET':
+        student_form = StudentForm()
+        context = {
+            'student_form': student_form,
+        }
+
+        return render(request, 'student_form.html', context=context)
+
+    elif request.method == 'POST':
+        student_form = StudentForm(request.POST)
+        if student_form.is_valid():
+            student_form.save()
+
+        return redirect('/home/form/')

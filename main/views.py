@@ -1,8 +1,8 @@
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect, render
 
-from main.models import Student
 from main.forms import StudentForm
+from main.models import Student
 
 
 def show_all_students(request):

@@ -7,8 +7,6 @@ from main.models import Student
 
 class Command(BaseCommand):
 
-    help = 'Add new student(s) to the system'
-
     def add_arguments(self, parser):
 
         parser.add_argument('-l', '--len', type=int, default=10)

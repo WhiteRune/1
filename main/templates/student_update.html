@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<form action="{% url 'students_create'%}" method="POST">
+<form action="{% url 'students_update' id=student.id %}" method="POST">
 
     {% csrf_token %}
 

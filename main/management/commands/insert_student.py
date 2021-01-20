@@ -7,6 +7,8 @@ from main.models import Student
 
 class Command(BaseCommand):
 
+    help = 'Add new student(s) to the system'
+
     def add_arguments(self, parser):
 
         parser.add_argument('-l', '--len', type=int, default=10)
@@ -24,5 +26,6 @@ class Command(BaseCommand):
             student.description = faker.text()
             student.birthday = faker.date_of_birth()
             student.email = faker.company_email()
+            student.social_url = faker.url()
             student.save()
         self.stdout.write('End inserting Students')

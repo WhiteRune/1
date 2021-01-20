@@ -1,7 +1,8 @@
-from main.views import show_all_students, create_student
+from main.views import StudentView, StudentCreateView, StudentUpdateView
 from django.urls import path
 
 urlpatterns = [
-    path('', show_all_students, name='students_list'),
-    path('create/', create_student, name='students_create'),
+    path('', StudentView.as_view(), name='students_list'),
+    path('create/', StudentCreateView.as_view(), name='students_create'),
+    path('update/', StudentUpdateView.as_view(), name='students_update'),
 ]

@@ -15,5 +15,5 @@ class Student(models.Model):
     address = models.CharField(max_length=400)
     description = models.TextField()
     email = models.CharField(max_length=200)
-
+    social_url = models.CharField(max_length=200, blank=True)
 

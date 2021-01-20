@@ -26,5 +26,6 @@ class Command(BaseCommand):
             student.description = faker.text()
             student.birthday = faker.date_of_birth()
             student.email = faker.company_email()
+            student.social_url = faker.url()
             student.save()
         self.stdout.write('End inserting Students')
